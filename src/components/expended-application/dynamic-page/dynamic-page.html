@@ -1,0 +1,37 @@
+<div style="flex: 1;display: flex;flex-direction: column;">
+  <div class="nav" style="height: 50px;"></div>
+  <dynamic-page
+    name="'outline'"
+    :dataSource="dataSource"
+    :operationOptions="operationOptions"
+    :contentOptions="contentOptions"
+    :showComponentSelector.sync="showSelectorFlag"
+    :displayContentType="displayContentType"
+    @on-start-component-edit="handleComponentEdit"
+    @on-undo-component-edit="handleComponentEditUndo"
+    @on-inserted-to-page="handleInsertContent"
+    @on-clone-finished="handleCloneFinished"
+    @on-removed-from-page="handleRemoveContent"
+    @on-clear-page="handleClearContent"
+  >
+    <template #contentItem="content">
+      <demo-previewer :previewer="content" :options="contentDataOptions"></demo-previewer>
+    </template>
+    <template #editor="editor">
+      <demo-editor :editor="editor" :componentExtraInfo="componentExtraInfo" :saveToLocalCache="true"> </demo-editor>
+    </template>
+    <template #componentSelector="selector">
+      <demo-list
+        :instance="selector"
+        :options="componentSelectorOptions"
+        :filter="filter"
+        :filterOptions="componentSelectorOptions.filterOptions"
+        :disableExtraFilter="disableComponentExtraFilter"
+        :enableSelfDataLoad="componentSelectorOptions.enableSelfDataLoad"
+      ></demo-list>
+    </template>
+  </dynamic-page>
+  <el-button type="primary" @click="handleNavigate" style="position: fixed; top: 10px; right: 20px;z-index: 2002;" plain
+    >元件管理
+  </el-button>
+</div>

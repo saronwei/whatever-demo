@@ -1,0 +1,18 @@
+<div class="home-container">
+  <div class="nav">
+    <ul>
+
+      <li @click="handleSelect('1')" @click.stop>
+        <span>快速启动</span>
+
+      </li>
+      <li @click="handleSelect('2')" @click.stop>
+        <span>拓展应用</span>
+
+      </li>
+    </ul>
+  </div>
+  <div class="content ">
+    <router-view></router-view>
+  </div>
+</div>

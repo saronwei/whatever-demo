@@ -1,0 +1,10 @@
+// 皮肤样式
+@import './themes/variables.scss';
+// 样式初始化
+@import './base/reset.scss';
+// 特殊样式修改
+@import './special/element-ui.scss';
+// 封装样式
+@import './helpers/mixin.scss';
+// 自定义样式
+// @import './themes/themes.scss';

@@ -1,0 +1,29 @@
+.home-container {
+  display: flex;
+  flex-direction: row;
+  flex: 1;
+
+
+  .nav {
+    position: absolute;
+    left: 0px;
+    top: 0;
+    height: 50px;
+    background: #00af93;
+    color: #ffffff;
+    width: 100%;
+
+    ul {
+      display: flex;
+
+      li {
+        margin: 0 8px;
+      }
+    }
+  }
+
+  .content {
+    flex: 10;
+    display: flex;
+  }
+}

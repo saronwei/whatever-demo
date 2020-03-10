@@ -1,0 +1,26 @@
+<div class="expended-application">
+  <div class="nav" style="height: 50px;"></div>
+  <component-manager
+    ref="componentManager"
+    class="component-manager"
+    @on-editor-shown="handleEditorShown"
+    @on-editor-close="handleEditorClose"
+  >
+    <template #component-list="componentList">
+      <demo-list :instance="componentList"></demo-list>
+    </template>
+    <template #creatorRegion="componentCreator">
+      <demo-creator :creator="componentCreator"></demo-creator>
+    </template>
+  </component-manager>
+  <div style="position: fixed; top: 0; right: 0;z-index: 2;">
+    <ul class="nav-content">
+      <li @click="navToDynamicpage">
+        动态页面
+      </li>
+      <li @click="navToTemplate">  模版管理</li>
+    </ul>
+   
+    </el-button>
+  </div>
+</div>
