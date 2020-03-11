@@ -20,7 +20,7 @@ export class ExpendedApplicationComponent extends Vue {
   // ....
 
   startCreate: Boolean = false;
-  startEdit: Boolean = false;
+  startEdit: Boolean = true;
   currentComponent: any = {};
   editor: any = {};
   editComponent: any = {};

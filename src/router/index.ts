@@ -4,8 +4,10 @@ import Router from 'vue-router';
 import { HomeComponent } from '@/components/home/home';
 import { QuickStartComponent } from '@/components/quick-start/quick-start';
 import { ExpendedApplicationComponent } from '@/components/expended-application/expended-application';
-import { TemplateManageComponent } from '@/components/expended-application/template-manange/template-manager';
 import { DemoDynamicPageComponent } from '@/components/expended-application/dynamic-page/dynamic-page';
+import { DemoEditor } from './../components/expended-application/editor/editor';
+import { DemoListComponent } from './../components/expended-application/list/list';
+
 Vue.use(Router);
 
 const routerMaps = [
@@ -14,6 +16,7 @@ const routerMaps = [
     component: HomeComponent,
     name: 'home',
     hidden: true,
+    redirect: '/quick-start', // 重定向
     children: [
       {
         path: 'quick-start',
@@ -28,9 +31,15 @@ const routerMaps = [
         hidden: true
       },
       {
-        path: 'template-manage',
-        component: TemplateManageComponent,
-        name: 'template-manage',
+        path: 'edit',
+        component: DemoEditor,
+        name: 'edit',
+        hidden: true
+      },
+      {
+        path: 'list',
+        component: DemoListComponent,
+        name: 'list',
         hidden: true
       },
       { path: 'dynamic-page', component: DemoDynamicPageComponent, name: 'dynamic-page', hidden: true }

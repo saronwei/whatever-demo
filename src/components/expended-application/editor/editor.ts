@@ -45,4 +45,13 @@ export class DemoEditor extends Vue {
     const editor = this.$refs['componentEditor'];
     this.$set(editor, 'enableBtnSave', flag);
   }
+
+  handleEditFinished() {
+    this.$router.push({ name: 'list' });
+  }
+
+  handleEditCancel() {
+
+  }
+
 }

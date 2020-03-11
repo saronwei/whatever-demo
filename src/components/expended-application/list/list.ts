@@ -7,6 +7,7 @@ import Html from './list.html';
 import { ComponentList } from '@gsafety/whatever/dist';
 import { State } from 'vuex-class';
 import { DemoFilterComponent } from '@/components/expended-application/filter/filter';
+import { DemoPreviewer } from '../previewer/previewer';
 
 @Component({
   name: 'demo-list',
@@ -14,7 +15,8 @@ import { DemoFilterComponent } from '@/components/expended-application/filter/fi
   style: Styles,
   components: {
     ComponentList,
-    'demo-filter': DemoFilterComponent
+    'demo-filter': DemoFilterComponent,
+    'demo-previewer': DemoPreviewer
   }
 })
 export class DemoListComponent extends Vue {
@@ -63,13 +65,27 @@ export class DemoListComponent extends Vue {
 
   multiTenancys: Array<any> = [];
 
-  handleSelectChange: any = () => {};
+  @State((state: any) => state.whatever.componentList)
+  componentList: any;
+  previewer: any = {};
+
   handleEdit: any = () => {};
   handlePush: any = () => {};
 
   @Watch('instance', { deep: true })
   handleInstanceChange(val: any) {
     this.initializeEvents(val);
+  }
+
+  handleSelectChange(val: any) {
+    this.previewer = val;
+  }
+
+  @Watch('componentList')
+  onCmponentListChange(val: any) {
+    if (Array.isArray(val) && val.length > 0) {
+      this.previewer = val[0];
+    }
   }
 
   created() {

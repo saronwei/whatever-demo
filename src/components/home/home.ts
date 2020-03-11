@@ -11,11 +11,7 @@ import Draggable from 'vuedraggable';
   }
 })
 export class HomeComponent extends Vue {
-  handleSelect(key: any) {
-    console.log(key);
 
-    this.$router.push({ name: key === '1' ? 'quick-start' : 'expended-application' });
-  }
   handleClose(key: any, keyPath: any) {
     console.log(key, keyPath);
   }

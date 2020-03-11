@@ -1,14 +1,20 @@
 <div class="home-container">
   <div class="nav">
     <ul>
-
-      <li @click="handleSelect('1')" @click.stop>
-        <span>快速启动</span>
-
+      <!-- <li>
+        <router-link to="/quick-start" active-class="active">快速启动</router-link>
+      </!-->
+      <!-- <li>
+        <router-link to="/expended-application" active-class="active">拓展应用</router-link>
+      </!--> 
+      <li>
+        <router-link to="/edit" active-class="active">编辑</router-link>
       </li>
-      <li @click="handleSelect('2')" @click.stop>
-        <span>拓展应用</span>
-
+      <li>
+        <router-link to="/list" active-class="active">列表</router-link>
+      </li>
+      <li>
+        <router-link to="/dynamic-page" active-class="active">动态页面</router-link>
       </li>
     </ul>
   </div>
