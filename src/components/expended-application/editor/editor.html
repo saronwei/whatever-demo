@@ -4,6 +4,7 @@
   :sideControlMode="true"
   @on-finished="handleEditFinished($event)"
   @on-undo="handleEditCancel"
+  :extraInfo="componentExtraInfo"
 >
   <template #previewRegion="previewer">
     <transition name="fade">
