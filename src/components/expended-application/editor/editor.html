@@ -1,10 +1,10 @@
-<component-editor-launcher ref="componentEditor" :component="editor.component" :model="editor.data"
-  :extraInfo="componentExtraInfo" :sideControlMode="true" :target="editor.target" :category="editor.category"
+<component-editor-launcher ref="componentEditor" :component="editor" :model="editor.data"
+  :extraInfo="componentExtraInfo" :sideControlMode="true"
   :saveToLocalCache="saveToLocalCache" @on-finished="handleEditFinished" @on-undo="handleEditCancel">
   <template #previewRegion="previewer">
     <transition name="fade">
-      <demo-previewer :previewer="previewer" :target="editor.target" :options="options"
+      <demo-previewer :previewer="previewer"  :options="options"
         :componentExtraInfo="componentExtraInfo" @on-info-validated="handlePreviewValidation"></demo-previewer>
-    </transition>
+      </transition>
   </template>
 </component-editor-launcher>

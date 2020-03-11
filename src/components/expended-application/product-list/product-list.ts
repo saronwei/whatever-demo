@@ -3,8 +3,8 @@ import Styles from './product-list.module.scss';
 import Html from './product-list.html';
 import { ComponentList } from '@gsafety/whatever/dist';
 import { State } from 'vuex-class';
-import { DemoPreviewer } from '../previewer/previewer';
 import { DemoListComponent } from '../list/list';
+import { ComponentPreviewer } from '@gsafety/whatever/dist';
 
 @Component({
   name: 'product-list',
@@ -13,12 +13,25 @@ import { DemoListComponent } from '../list/list';
   components: {
     ComponentList,
     'demo-list': DemoListComponent,
-    'demo-previewer': DemoPreviewer
+    'component-previewer': ComponentPreviewer
   }
 })
 export class ProductistComponent extends Vue {
 
-    previewer = {};
+    product = {};
+
+    @Prop({
+      default: () => {
+        return {
+          showComponentTitle: false,
+          normalDisplay: true,
+          showBasicInfo: false,
+          readMode: true,
+          printMode: true
+        };
+      }
+    })
+    options!: any;
 
     @State((state: any) => state.whatever.componentList)
     componentList: any;
@@ -26,16 +39,27 @@ export class ProductistComponent extends Vue {
     @Watch('componentList')
     onCmponentListChange(val: any) {
       if (Array.isArray(val) && val.length > 0) {
-        this.previewer = val[0];
+        this.product = val[0];
       }
     }
 
     handleSelectionChange(val: any) {
-        this.previewer = val;
+        this.product = val;
     }
 
     handleEdit(val: any) {
 
+      console.log(val);
+      
+      this.$router.push({
+        path: '/edit',
+        query: {
+          product: val
+        }
+    });
     }
 
+    handlePreviewValidation(flag: any) {
+      this.$emit('on-info-validated', flag);
+    }
 }

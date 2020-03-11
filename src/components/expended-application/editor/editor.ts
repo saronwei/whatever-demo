@@ -14,12 +14,8 @@ import { ComponentEditorLauncher } from '@gsafety/whatever/dist';
   }
 })
 export class DemoEditor extends Vue {
-  @Prop({
-    default: () => {
-      return {};
-    }
-  })
-  editor: any;
+  editor: any = {} ;
+
   @Prop({
     default: false
   })
@@ -36,8 +32,9 @@ export class DemoEditor extends Vue {
   };
 
   mounted() {
-    if (this.editor && Object.keys(this.editor).indexOf('component') >= 0) {
-      this.componentExtraInfo = this.editor.component.extraInfo ? this.editor.component.extraInfo : { tag: '' };
+    this.editor = this.$route.query.product;
+    if (this.editor && Object.keys(this.editor).indexOf('extraInfo') >= 0) {
+      this.componentExtraInfo = this.editor.extraInfo ? this.editor.extraInfo : { tag: '' };
     }
   }
 

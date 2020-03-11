@@ -1,8 +1,18 @@
 <div class="wrapper">
-    <div class="com-list">  
-        <demo-list @selection-change="handleSelectionChange" @edit="handleEdit"></demo-list>
-    </div>
-    <div class="com-preview">
-      <demo-previewer :previewer="previewer"></demo-previewer>
-    </div>
+  <div class="com-list">
+    <demo-list @selection-change="handleSelectionChange" @edit="handleEdit"></demo-list>
   </div>
+  <div class="com-product">
+    <component-previewer :layout="product.layout" :component="product"
+      :title.sync="product.name" :originalName="product.name"
+      :model="product.data" :rules="product.rules" :readMode="options.readMode" :printMode="options.printMode"
+      :showTitle="options.showComponentTitle" :showBasicInfo="options.showBasicInfo"
+      :normalDisplay="options.normalDisplay" @on-info-validated="handlePreviewValidation">
+      <template #basic-info="basicInfo">
+        <div class="preview-basic-info">
+          <p>这里可以为元件拓展属性，比如设置标签等</p>
+        </div>
+      </template>
+    </component-previewer>
+  </div>
+</div>
