@@ -33,6 +33,9 @@ export class DemoEditor extends Vue {
 
   created() {
     this.editor = this.$route.query.product;
+    if(!this.editor){
+      this.editor = {};
+    }
     if (this.editor && Object.keys(this.editor).indexOf('extraInfo') >= 0) {
       this.componentExtraInfo = this.editor.extraInfo ? this.editor.extraInfo : { tag: '' };
     }
