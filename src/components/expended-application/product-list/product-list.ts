@@ -3,7 +3,7 @@ import Styles from './product-list.module.scss';
 import Html from './product-list.html';
 import { ComponentList } from '@gsafety/whatever/dist';
 import { State } from 'vuex-class';
-import { DemoListComponent } from '../list/list';
+import { DemoListComponent } from '../product-base-list/list';
 import { ComponentPreviewer } from '@gsafety/whatever/dist';
 
 @Component({

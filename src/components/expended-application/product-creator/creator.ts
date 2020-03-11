@@ -2,7 +2,7 @@ import { Component, Vue, Prop, Watch } from 'vue-property-decorator';
 import template from './creator.html';
 import styles from './creator.module.scss';
 import { ComponentCreator } from '@gsafety/whatever/dist/components/component-creator';
-import { DemoEditor } from '../editor/editor';
+import { DemoEditor } from '../product-editor/editor';
 // import { PmsCompTemplateManager } from '../template/component-template';
 
 @Component({

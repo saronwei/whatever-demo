@@ -3,9 +3,9 @@ import template from './dynamic-page.html';
 import style from './dynamic-page.module.scss';
 
 import { DynamicPage } from '@gsafety/whatever/dist';
-import { DemoPreviewer } from '../previewer/previewer';
-import { DemoListComponent } from '../list/list';
-import { DemoEditor } from '../editor/editor';
+import { DemoPreviewer } from '../product-previewer/previewer';
+import { DemoListComponent } from '../product-base-list/list';
+import { DemoEditor } from '../product-editor/editor';
 import { State } from 'vuex-class';
 
 @Component({
@@ -228,4 +228,5 @@ export class DemoDynamicPageComponent extends Vue {
   handleNavigate() {
     this.$router.push({ path: 'expended-application' });
   }
+
 }

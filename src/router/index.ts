@@ -4,7 +4,7 @@ import Router from 'vue-router';
 import { HomeComponent } from '@/components/home/home';
 import { QuickStartComponent } from '@/components/quick-start/quick-start';
 import { DemoDynamicPageComponent } from '@/components/expended-application/dynamic-page/dynamic-page';
-import { DemoEditor } from './../components/expended-application/editor/editor';
+import { DemoEditor } from '../components/expended-application/product-editor/editor';
 import { ProductistComponent } from '@/components/expended-application/product-list/product-list';
 
 Vue.use(Router);

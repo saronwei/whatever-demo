@@ -1,7 +1,7 @@
 import { Vue, Component, Prop } from 'vue-property-decorator';
 import template from './editor.html';
 import style from './editor.module.scss';
-import { DemoPreviewer } from '../previewer/previewer';
+import { DemoPreviewer } from '../product-previewer/previewer';
 import { ComponentEditorLauncher } from '@gsafety/whatever/dist';
 
 @Component({
