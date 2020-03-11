@@ -17,7 +17,7 @@ export class DemoEditor extends Vue {
   editor: any = {} ;
 
   @Prop({
-    default: false
+    default: true
   })
   saveToLocalCache!: boolean;
 
@@ -31,7 +31,7 @@ export class DemoEditor extends Vue {
     printMode: true
   };
 
-  mounted() {
+  created() {
     this.editor = this.$route.query.product;
     if (this.editor && Object.keys(this.editor).indexOf('extraInfo') >= 0) {
       this.componentExtraInfo = this.editor.extraInfo ? this.editor.extraInfo : { tag: '' };

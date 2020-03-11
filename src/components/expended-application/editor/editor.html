@@ -1,10 +1,18 @@
-<component-editor-launcher ref="componentEditor" :component="editor" :model="editor.data"
-  :extraInfo="componentExtraInfo" :sideControlMode="true"
-  :saveToLocalCache="saveToLocalCache" @on-finished="handleEditFinished" @on-undo="handleEditCancel">
+<component-editor-launcher
+  :component="editor"
+  :model="editor.data"
+  :sideControlMode="true"
+  @on-finished="handleEditFinished($event)"
+  @on-undo="handleEditCancel"
+>
   <template #previewRegion="previewer">
     <transition name="fade">
-      <demo-previewer :previewer="previewer"  :options="options"
-        :componentExtraInfo="componentExtraInfo" @on-info-validated="handlePreviewValidation"></demo-previewer>
-      </transition>
+      <demo-previewer
+        :previewer="previewer"
+        :options="options"
+        :componentExtraInfo="componentExtraInfo"
+        @on-info-validated="handlePreviewValidation"
+      ></demo-previewer>
+    </transition>
   </template>
 </component-editor-launcher>
