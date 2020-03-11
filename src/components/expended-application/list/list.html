@@ -1,10 +1,24 @@
+<!-- <<<<<<< Updated upstream
 
   <component-list @on-selection-change="handleSelectChange" @on-begin-component-edit="handleEdit"
     @on-sure-to-display="handlePush" :enablePopPreview="instance.enablePopPreview"
     :enableSelfDataLoad="enableSelfDataLoad" :miniMode="options.miniMode" :choosenItems="options.choosenItems">
+======= -->
+<component-list
+  @on-selection-change="handleSelectChange"
+  @on-begin-component-edit="handleEdit"
+  @on-sure-to-display="handlePush"
+  :enableSelfDataLoad="enableSelfDataLoad"
+  ref="component-list-demo"
+>
+<!-- >>>>>>> Stashed changes -->
   <template #filter="instance">
-    <demo-filter :instance="instance" :extraFilter="filter" :options="filterOptions"
-      :disableExtraFilter="disableExtraFilter"></demo-filter>
+    <demo-filter
+      :instance="instance"
+      :extraFilter="filter"
+      :options="filterOptions"
+      :disableExtraFilter="disableExtraFilter"
+    ></demo-filter>
   </template>
   <template #componentIntro="component">
     <p class="title">
@@ -12,8 +26,12 @@
     </p>
     <div class="list-item-content">
       <span class="content-item">
-        <b>{{$t('tempMgr.edit_time.label')}}</b>
-        {{ component.intro.editTime }}
+       <b>商品价格: ¥ {{ component.intro.extraInfo.price }}</b> 
+       <b class="content-item-product-type">商品类型: {{ component.intro.extraInfo.cellTypeName }}</b>
+      </span>
+      </span>
+      <span class="content-item">
+       <b>发布时间: {{ component.intro.editTime }}</b> 
       </span>
     </div>
   </template>

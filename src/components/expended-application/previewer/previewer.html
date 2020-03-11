@@ -4,10 +4,36 @@
   :readMode="options.readMode" :printMode="options.printMode" :showTitle="options.showComponentTitle"
   :showBasicInfo="options.showBasicInfo" :normalDisplay="options.normalDisplay"
   @on-info-validated="handlePreviewValidation">
-  <template #basic-info="basicInfo">
-    <div class="preview-basic-info">
-      <p>这里可以为元件拓展属性，比如设置标签等</p>
+
+  <template #config-region="configRegion">
+    <div>
+      <!-- 是否置为元件模板 -->
     </div>
   </template>
+
+  <template #basic-info="basicInfo">
+    <div class="info-item info-item-product">
+      <p>商品类型</p>
+      <el-select
+        v-model="selectComponentType"
+        :disabled="target==='template'"
+        :placeholder="$t('whatever.component_previewer.component_type_placeholder')"
+        style="width: 100%; margin-bottom:0.5em"
+        @change="handleComponentTypeChange"
+      >
+        <el-option v-for="item in componentTypes" :key="item.id" :value="item.id" :label="item.name"></el-option>
+      </el-select>
+    </div>
+    <div class="info-item info-item-product">
+      <p>商品价格</p>
+      <el-input-number v-model="num" @change="handleChange" :min="0.01" :max="1000000" label="商品价格"></el-input-number>
+    </div>
+  </template>
+<!-- <<<<<<< Updated upstream
 </component-previewer>
 </div>
+======= -->
+
+</component-previewer>
+</div>
+<!-- >>>>>>> Stashed changes -->

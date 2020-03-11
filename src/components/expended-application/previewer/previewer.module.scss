@@ -8,6 +8,7 @@
         flex: 1;
     }
 }
+
 // .c____100____component-previewer {
 //   position: absolute;
 //   top: 50px !important;
@@ -23,3 +24,15 @@
 //       margin-bottom: 0;
 //   }
 // }
+
+
+p {
+  margin-bottom: 10px;
+  color: #909399;
+  // @include setting_info_item_font_color($setting-info-item-color-white);
+  font-weight: bold;
+}
+.info-item-product{
+  padding: 0 10px;
+}
+

@@ -15,7 +15,7 @@ import { DemoFilterComponent } from '@/components/expended-application/filter/fi
   style: Styles,
   components: {
     ComponentList,
-    'demo-filter': DemoFilterComponent,
+    'demo-filter': DemoFilterComponent
     // 'demo-previewer': DemoPreviewer
   }
 })
@@ -65,8 +65,6 @@ export class DemoListComponent extends Vue {
 
   multiTenancys: Array<any> = [];
 
-
-
   handlePush: any = () => {};
 
   @Watch('instance', { deep: true })
@@ -80,6 +78,15 @@ export class DemoListComponent extends Vue {
 
   handleEdit(val: any) {
     this.$emit('edit', val);
+  }
+
+  mounted() {
+    // console.log(`==========================================================`);
+    // const changePwd: any = document.querySelector(
+    //   '.content-item'
+    // ) as HTMLDivElement;
+    // console.log(changePwd);
+    // console.log(`==========================================================`);
   }
 
   created() {
