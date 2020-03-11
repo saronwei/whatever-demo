@@ -1,7 +1,7 @@
 
   <component-list @on-selection-change="handleSelectChange" @on-begin-component-edit="handleEdit"
-    @on-sure-to-display="handlePush" 
-    :enableSelfDataLoad="enableSelfDataLoad" >
+    @on-sure-to-display="handlePush" :enablePopPreview="instance.enablePopPreview"
+    :enableSelfDataLoad="enableSelfDataLoad" :miniMode="options.miniMode" :choosenItems="options.choosenItems">
   <template #filter="instance">
     <demo-filter :instance="instance" :extraFilter="filter" :options="filterOptions"
       :disableExtraFilter="disableExtraFilter"></demo-filter>

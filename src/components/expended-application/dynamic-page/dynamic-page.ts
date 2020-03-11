@@ -147,6 +147,7 @@ export class DemoDynamicPageComponent extends Vue {
     }
   })
   componentSelectorOptions!: any;
+
   @Prop({
     default: false
   })

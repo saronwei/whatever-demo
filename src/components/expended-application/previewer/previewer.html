@@ -1,4 +1,5 @@
-<component-previewer :layout="previewer.layout" :component="previewer.component" :title.sync="previewer.component.name"
+<div class="preview">
+  <component-previewer :layout="previewer.layout" :component="previewer.component" :title.sync="previewer.component.name"
   :originalName="previewer.originalName" :target="target" :model="previewer.data" :rules="previewer.rules"
   :readMode="options.readMode" :printMode="options.printMode" :showTitle="options.showComponentTitle"
   :showBasicInfo="options.showBasicInfo" :normalDisplay="options.normalDisplay"
@@ -9,3 +10,4 @@
     </div>
   </template>
 </component-previewer>
+</div>
