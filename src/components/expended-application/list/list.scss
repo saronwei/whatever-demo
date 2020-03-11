@@ -15,15 +15,3 @@
   color: #555555;
 }
 
-.wrapper {
-  flex: 1;
-  display: flex;
-  flex-direction: row;
-  .com-list {
-    // flex: 4;
-    width: 500px;
-  }
-  .com-preview {
-    flex: 1;
-  }
-}

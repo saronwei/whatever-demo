@@ -7,7 +7,7 @@ import Html from './list.html';
 import { ComponentList } from '@gsafety/whatever/dist';
 import { State } from 'vuex-class';
 import { DemoFilterComponent } from '@/components/expended-application/filter/filter';
-import { DemoPreviewer } from '../previewer/previewer';
+// import { DemoPreviewer } from '../previewer/previewer';
 
 @Component({
   name: 'demo-list',
@@ -16,7 +16,7 @@ import { DemoPreviewer } from '../previewer/previewer';
   components: {
     ComponentList,
     'demo-filter': DemoFilterComponent,
-    'demo-previewer': DemoPreviewer
+    // 'demo-previewer': DemoPreviewer
   }
 })
 export class DemoListComponent extends Vue {
@@ -65,11 +65,8 @@ export class DemoListComponent extends Vue {
 
   multiTenancys: Array<any> = [];
 
-  @State((state: any) => state.whatever.componentList)
-  componentList: any;
-  previewer: any = {};
 
-  handleEdit: any = () => {};
+
   handlePush: any = () => {};
 
   @Watch('instance', { deep: true })
@@ -78,14 +75,11 @@ export class DemoListComponent extends Vue {
   }
 
   handleSelectChange(val: any) {
-    this.previewer = val;
+    this.$emit('selection-change', val);
   }
 
-  @Watch('componentList')
-  onCmponentListChange(val: any) {
-    if (Array.isArray(val) && val.length > 0) {
-      this.previewer = val[0];
-    }
+  handleEdit(val: any) {
+    this.$emit('edit', val);
   }
 
   created() {

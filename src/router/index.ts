@@ -6,7 +6,7 @@ import { QuickStartComponent } from '@/components/quick-start/quick-start';
 import { ExpendedApplicationComponent } from '@/components/expended-application/expended-application';
 import { DemoDynamicPageComponent } from '@/components/expended-application/dynamic-page/dynamic-page';
 import { DemoEditor } from './../components/expended-application/editor/editor';
-import { DemoListComponent } from './../components/expended-application/list/list';
+import { ProductistComponent } from '@/components/expended-application/product-list/product-list';
 
 Vue.use(Router);
 
@@ -16,7 +16,7 @@ const routerMaps = [
     component: HomeComponent,
     name: 'home',
     hidden: true,
-    redirect: '/quick-start', // 重定向
+    redirect: '/edit', // 重定向
     children: [
       {
         path: 'quick-start',
@@ -38,7 +38,7 @@ const routerMaps = [
       },
       {
         path: 'list',
-        component: DemoListComponent,
+        component: ProductistComponent,
         name: 'list',
         hidden: true
       },
