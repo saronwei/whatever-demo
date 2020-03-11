@@ -1,9 +1,6 @@
 import { Component, Prop, Vue, Watch } from 'vue-property-decorator';
-import { ComponentManager, ComponentCreator } from '@gsafety/whatever/dist';
-
-import Styles from './list.scss';
+import Styles from './list.module.scss';
 import Html from './list.html';
-
 import { ComponentList } from '@gsafety/whatever/dist';
 import { State } from 'vuex-class';
 import { DemoFilterComponent } from '@/components/expended-application/filter/filter';

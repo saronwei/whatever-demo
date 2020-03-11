@@ -62,7 +62,8 @@ export class DemoDynamicPageComponent extends Vue {
         disableDefaultToolBar: false,
         disableDefaultOperations: false,
         enableManuallySelectorHide: false,
-        saveToLocalCache: true
+        saveToLocalCache: true,
+        disableAddAction: true
       };
     }
   })

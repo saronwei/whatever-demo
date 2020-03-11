@@ -3,7 +3,7 @@ import { ComponentManager, ComponentCreator } from '@gsafety/whatever/dist';
 import { State } from 'vuex-class';
 import { ComponentFilter } from '@gsafety/whatever/dist';
 
-import Styles from './filter.scss';
+import Styles from './filter.module.scss';
 import Html from './filter.html';
 
 @Component({
