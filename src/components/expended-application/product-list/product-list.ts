@@ -48,6 +48,7 @@ export class ProductistComponent extends Vue {
     }
 
     handleEdit(val: any) {
+      console.log(val);
       this.$router.push({
         path: '/edit',
         query: {

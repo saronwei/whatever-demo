@@ -51,7 +51,7 @@ export class DemoEditor extends Vue {
   }
 
   handleEditCancel() {
-
+    this.$router.push({name: 'list'});
   }
 
 }
