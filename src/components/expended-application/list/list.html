@@ -1,17 +1,14 @@
-<!-- <<<<<<< Updated upstream
 
-  <component-list @on-selection-change="handleSelectChange" @on-begin-component-edit="handleEdit"
-    @on-sure-to-display="handlePush" :enablePopPreview="instance.enablePopPreview"
-    :enableSelfDataLoad="enableSelfDataLoad" :miniMode="options.miniMode" :choosenItems="options.choosenItems">
-======= -->
 <component-list
   @on-selection-change="handleSelectChange"
   @on-begin-component-edit="handleEdit"
   @on-sure-to-display="handlePush"
   :enableSelfDataLoad="enableSelfDataLoad"
+  :enablePopPreview="instance.enablePopPreview"
+  :miniMode="options.miniMode"
+  :choosenItems="options.choosenItems"
   ref="component-list-demo"
 >
-<!-- >>>>>>> Stashed changes -->
   <template #filter="instance">
     <demo-filter
       :instance="instance"
