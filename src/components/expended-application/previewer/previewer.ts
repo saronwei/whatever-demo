@@ -76,6 +76,8 @@ export class DemoPreviewer extends Vue {
     }
   }
 
+  mounted() {
+  }
 
 
   beforeDestroy() {}

@@ -81,12 +81,6 @@ export class DemoListComponent extends Vue {
   }
 
   mounted() {
-    // console.log(`==========================================================`);
-    // const changePwd: any = document.querySelector(
-    //   '.content-item'
-    // ) as HTMLDivElement;
-    // console.log(changePwd);
-    // console.log(`==========================================================`);
   }
 
   created() {

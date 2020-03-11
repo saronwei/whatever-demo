@@ -18,19 +18,19 @@ Vue.use(VueI18n);
 
 const messages = {
   en: {
-    ...en,
     ...elementEnLocale,
-    ...whateverEN
+    ...whateverEN,
+    ...en
   },
   zh: {
-    ...zh,
     ...elementZhLocale,
-    ...whateverCN
+    ...whateverCN,
+    ...zh
   },
   es: {
-    ...es,
     ...elementEsLocale,
-    ...whateverEC
+    ...whateverEC,
+    ...es,
   }
 };
 
