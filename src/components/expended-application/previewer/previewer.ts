@@ -3,6 +3,7 @@ import template from './previewer.html';
 import styles from './previewer.module.scss';
 import { ComponentPreviewer } from '@gsafety/whatever/dist';
 import { State } from 'vuex-class';
+import store from '@/store';
 
 @Component({
   name: 'demo-previewer',
@@ -39,6 +40,8 @@ export class DemoPreviewer extends Vue {
     default: 'component'
   })
   target!: string;
+
+  // 默认商品类型
 
   // 所有商品类型
   @State((state: any) => {
@@ -77,8 +80,13 @@ export class DemoPreviewer extends Vue {
   }
 
   mounted() {
+    if (!this.componentExtraInfo.price) {
+      this.handleChange(100);
+    }
+    if (!this.componentExtraInfo.cellTypeName) {
+      this.handleComponentTypeChange('0006');
+    }
   }
-
 
   beforeDestroy() {}
 }
